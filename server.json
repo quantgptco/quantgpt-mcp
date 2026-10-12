@@ -1,0 +1,34 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "co.quantgpt/mcp",
+  "title": "QuantGPT",
+  "description": "The data and trading platform for AI: decades of US market data, backtests in seconds.",
+  "version": "1.0.0",
+  "websiteUrl": "https://quantgpt.co",
+  "icons": [
+    {
+      "src": "https://terminal.quantgpt.co/static/icons/icon-192.png",
+      "mimeType": "image/png",
+      "sizes": ["192x192"]
+    },
+    {
+      "src": "https://terminal.quantgpt.co/static/icons/icon-512.png",
+      "mimeType": "image/png",
+      "sizes": ["512x512"]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://terminal.quantgpt.co/mcp",
+      "headers": [
+        {
+          "name": "X-API-Key",
+          "description": "Optional. A QuantGPT key (qg_sk_...) from your account page at terminal.quantgpt.co/account. Leave it empty to sign in with OAuth instead.",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
