@@ -138,7 +138,7 @@ Ask your AI to call `describe_capabilities`: it returns the whole map (every fac
 
 ## What your AI can call
 
-76 tools. None of them places, modifies or cancels an order at any broker. A few write to your own QuantGPT account: saved studies, paper books, sealed books, alerts, event rules and the panels on your terminal.
+76 tools, 68 of them switched on today; the 8 marked (coming soon) answer with a coming-soon note until they open. None of them places, modifies or cancels an order at any broker. A few write to your own QuantGPT account: saved studies, paper books, sealed books, alerts, event rules and the panels on your terminal.
 
 ### Listed on connect (14)
 
@@ -155,7 +155,7 @@ Ask your AI to call `describe_capabilities`: it returns the whole map (every fac
 | `run_sweep` | Up to 100 criteria variants in one call, returned as a ranked comparison table. |
 | `challenge_finding` | The skeptic pass: eleven checks that try to break a finding, strongest objection first. |
 | `fetch_job` | Collects a long-running job (a backtest, regression or skeptic pass) by its job id. |
-| `pre_trade_brief` | A ticker's grade, whether it passes your criteria today, the criteria's finding with the skeptic pass, and what your past findings did next. Findings, not orders. |
+| `pre_trade_brief` | (coming soon) A ticker's grade, whether it passes your criteria today, the criteria's finding with the skeptic pass, and what your past findings did next. Findings, not orders. |
 | `query_warehouse` | Read-only SQL (DuckDB) over every research database: SELECT, WITH, DESCRIBE and SHOW only, 5,000-row cap, 45-second timeout. |
 | `list_warehouse` | The map of every database and table `query_warehouse` can read. |
 
@@ -201,11 +201,11 @@ Ask your AI to call `describe_capabilities`: it returns the whole map (every fac
 |---|---|
 | `run_portfolio` | A fixed-weight book walked day by day against a benchmark: CAGR, volatility, Sharpe, drawdown with its dates, every calendar year beside the benchmark's, beta and alpha. |
 | `optimize_portfolio` | A long-only frontier over 2 to 12 tickers on monthly total returns: history, not a forecast. |
-| `rebalance_plan` | The trade list from your criteria to the book they imply today, as a CSV for your broker or your own software. QuantGPT places nothing. |
+| `rebalance_plan` | (coming soon) The trade list from your criteria to the book they imply today, as a CSV for your broker or your own software. QuantGPT places nothing. |
 | `paper_books` | Follows a criteria set on paper from today, marked nightly, rebalanced monthly. No broker. |
 | `record_book` | Seals a stock list with a timestamped hash and follows it on paper against SPY's total return. |
 | `strategy_alerts` | A nightly watch on a screen: you are told when a name enters or leaves. Nothing is placed. |
-| `portfolio_review` | Your holdings read against the warehouse: grades, factors, concentration, correlation, the book's history. QuantGPT Pro. |
+| `portfolio_review` | (coming soon) Your holdings read against the warehouse: grades, factors, concentration, correlation, the book's history. QuantGPT Pro. |
 | `count_bets` | How many independent bets a book holds, from its correlation matrix, and the ETF its daily path resembles. QuantGPT and QuantGPT Pro. |
 
 ### Macro: category `macro` (4)
@@ -223,10 +223,10 @@ Ask your AI to call `describe_capabilities`: it returns the whole map (every fac
 |---|---|
 | `run_crypto_backtest` | Monthly cross-sectional crypto backtest over Binance USDT pairs against BTC buy and hold. |
 | `run_funding_backtest` | Ranks Binance perpetuals by funding rate (865 perps, 2020 on) and holds spot, against BTC. |
-| `run_pm_backtest` | Resolved Polymarket and Kalshi markets: buy YES N days before close, with ROI, Brier score and the calibration table. |
-| `pm_screen` | Today's open Polymarket and Kalshi markets against the crowd's resolved record at similar prices. Never a forecast. |
-| `pm_grade` | One open prediction market with the calibration tables behind its read. |
-| `run_sports_backtest` | Flat-stake rules on Bet365 closing odds: 17 European soccer leagues, 128,477 matches, 2005/06 to 2025/26. |
+| `run_pm_backtest` | (coming soon) Resolved Polymarket and Kalshi markets: buy YES N days before close, with ROI, Brier score and the calibration table. |
+| `pm_screen` | (coming soon) Today's open Polymarket and Kalshi markets against the crowd's resolved record at similar prices. Never a forecast. |
+| `pm_grade` | (coming soon) One open prediction market with the calibration tables behind its read. |
+| `run_sports_backtest` | (coming soon) Flat-stake rules on Bet365 closing odds: 17 European soccer leagues, 128,477 matches, 2005/06 to 2025/26. |
 | `run_meme_backtest` | Memecoin cross-sections with dead tokens counted as total losses. |
 | `meme_survival` | Memecoin pools by launch month: how many still traded at 30, 90 and 180 days. |
 | `meme_screen` | Today's living memecoins passing a filter, ranked by a factor. Never a recommendation. |
@@ -240,7 +240,7 @@ Ask your AI to call `describe_capabilities`: it returns the whole map (every fac
 | Tool | What it does |
 |---|---|
 | `event_desk` | The world's events from public feeds against the market's record: evidence, analogues, ripples, chokepoints and your pins. |
-| `futuretest` | Your book through every real analogue of a scenario, day by day for 63 sessions: the record of past episodes, not a forecast. |
+| `futuretest` | (coming soon) Your book through every real analogue of a scenario, day by day for 63 sessions: the record of past episodes, not a forecast. |
 | `event_rules` | Your own rules on events: notify you, open a paper position, or raise a signal for your own software. Never an order. |
 
 ### Charts: category `charts` (3)

@@ -3,18 +3,26 @@
   "name": "co.quantgpt/mcp",
   "title": "QuantGPT",
   "description": "The data and trading platform for AI: decades of US market data, backtests in seconds.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "websiteUrl": "https://quantgpt.co",
+  "repository": {
+    "url": "https://github.com/quantgptco/quantgpt-mcp",
+    "source": "github"
+  },
   "icons": [
     {
       "src": "https://terminal.quantgpt.co/static/icons/icon-192.png",
       "mimeType": "image/png",
-      "sizes": ["192x192"]
+      "sizes": [
+        "192x192"
+      ]
     },
     {
       "src": "https://terminal.quantgpt.co/static/icons/icon-512.png",
       "mimeType": "image/png",
-      "sizes": ["512x512"]
+      "sizes": [
+        "512x512"
+      ]
     }
   ],
   "remotes": [
