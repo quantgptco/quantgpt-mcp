@@ -2,7 +2,7 @@
 
 **The data and trading platform for AI: decades of US market data, backtests in seconds.**
 
-QuantGPT is the data and trading platform for AI. Claude and ChatGPT connect over MCP to decades of US market data, and backtests run in seconds on QuantGPT Cloud. On QuantGPT Pro, your own strategy runs there too and trades in your own brokerage account. Start on the free plan, or try QuantGPT or QuantGPT Pro free for 3 days.
+QuantGPT is the data and trading platform for AI. Claude and ChatGPT connect over MCP to decades of US market data, and backtests run in seconds on QuantGPT Cloud. On QuantGPT Pro, your own strategy runs there too and trades in your own brokerage account. Start with a 3-day free trial of QuantGPT or QuantGPT Pro, cancel any time.
 
 | | |
 |---|---|
@@ -10,7 +10,7 @@ QuantGPT is the data and trading platform for AI. Claude and ChatGPT connect ove
 | Transport | Streamable HTTP, JSON-RPC 2.0 over POST, stateless |
 | Sign-in | OAuth 2.1 (dynamic client registration, PKCE S256), or a key in a header |
 | Works with | Claude, ChatGPT, Gemini, Cursor, Claude Code and any MCP client |
-| Plans | Free (no card), QuantGPT $49 a month, QuantGPT Pro $149 a month, 3 days free |
+| Plans | QuantGPT $49 a month, QuantGPT Pro $149 a month, each with a 3-day free trial |
 | Website | https://quantgpt.co |
 | Registry name | `co.quantgpt/mcp` |
 
@@ -42,7 +42,7 @@ Claude, ChatGPT and the Gemini app sign in to QuantGPT through OAuth: no key to 
 
 ### Get a key
 
-1. Sign in at https://terminal.quantgpt.co (new here? [start free](https://terminal.quantgpt.co/signin#start): no card).
+1. Sign in at https://terminal.quantgpt.co (new here? [start a 3-day free trial](https://terminal.quantgpt.co/join)).
 2. Open your account page. Under Keys for your AI, type a label and press Issue key.
 3. Copy the `qg_sk_...` value now. Only its hash is stored, so it is shown once.
 
@@ -286,13 +286,13 @@ Ask: "Run the library strategy `piotroski-2000`, show me its losing years and it
 
 ## Plans and limits
 
-| | Free | QuantGPT | QuantGPT Pro |
-|---|---|---|---|
-| Price | $0, no card | $49 a month | $149 a month |
-| AI calls | 5 for the life of the account | 500 a day | 1,500 a day |
-| Keys | 1 | 3 | 5 |
+| | QuantGPT | QuantGPT Pro |
+|---|---|---|
+| Price | $49 a month | $149 a month |
+| AI calls | 500 a day | 1,500 a day |
+| Keys | 3 | 5 |
 
-- QuantGPT and QuantGPT Pro start with 3 days free: card up front, cancel any time. The trial includes 5 backtests and 5 AI calls.
+- QuantGPT and QuantGPT Pro start with a 3-day free trial: card up front, cancel any time. The trial has the plan's full daily limits.
 - An AI call is one tool call. Connecting, listing tools and pings do not count. The count is per account, across all of its keys.
 - A per-minute limit per account also applies. Past it the server answers `429`; try again a minute later.
 - Some tools depend on the plan: `portfolio_review` opens on QuantGPT Pro, `count_bets` on QuantGPT and QuantGPT Pro, and `strategy_alerts` allows 3 alerts on QuantGPT and unlimited alerts on QuantGPT Pro.

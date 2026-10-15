@@ -1,6 +1,6 @@
 # Your first session
 
-Six prompts, in order, for the first time your AI is connected to QuantGPT. Each tool call counts as one AI call: the Free plan has 5 for the life of the account, so on it pick two or three of these. Paid plans have 500 (QuantGPT) or 1,500 (QuantGPT Pro) a day.
+Six prompts, in order, for the first time your AI is connected to QuantGPT. Each tool call counts as one AI call: QuantGPT has 500 a day and QuantGPT Pro 1,500 a day, the 3-day trial included.
 
 Updated September 2026.
 
