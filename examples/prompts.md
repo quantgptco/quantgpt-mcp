@@ -4,7 +4,7 @@ Prompts to paste into Claude, ChatGPT, Gemini, Cursor or any client connected to
 
 These are research questions. The answers describe the past: none of them is a forecast, a recommendation or an order, and a good answer shows the losing years, the sample size and the caveats.
 
-Updated September 2026.
+Updated October 2026.
 
 ## Test a documented strategy
 
@@ -104,7 +104,7 @@ Tools: `event_desk` (category `events`).
 
 > Futuretest this book against the oil_shock scenario: TICKER1 40%, TICKER2 30%, TICKER3 30%. Show every analogue's path, the worst one first, and say how many analogues there are.
 
-Tools: `futuretest` (category `events`). A good answer says it is the record of past episodes, not a forecast.
+Tools: `futuretest` (category `events`, coming soon: until it opens it answers with a coming-soon note). A good answer says it is the record of past episodes, not a forecast.
 
 ## Other markets
 
@@ -112,7 +112,7 @@ Tools: `futuretest` (category `events`). A good answer says it is the record of 
 
 > Backtest buying YES on resolved prediction markets 7 days before close and show the calibration table: at which prices was the crowd furthest from what happened, and how many markets sit behind each row?
 
-Tools: `run_pm_backtest` (category `alt_markets`). A good answer gives the count behind each price bucket and says that no fees or spread are modelled.
+Tools: `run_pm_backtest` (category `alt_markets`, coming soon: until it opens it answers with a coming-soon note; the library lists `pm-longshot-bias`, on resolved Polymarket markets, as runnable through `run_library_strategy`). A good answer gives the count behind each price bucket and says that no fees or spread are modelled.
 
 **17. The memecoin graveyard**
 

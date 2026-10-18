@@ -2,7 +2,7 @@
 
 Six prompts, in order, for the first time your AI is connected to QuantGPT. Each tool call counts as one AI call: QuantGPT has 500 a day and QuantGPT Pro 1,500 a day, the 3-day trial included.
 
-Updated September 2026.
+Updated October 2026.
 
 **1. Learn what is there, and what is missing**
 

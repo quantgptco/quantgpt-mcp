@@ -1,8 +1,12 @@
-# QuantGPT MCP
+# QuantGPT (quantgpt.co)
+
+QuantGPT (quantgpt.co) is the data and trading platform for AI. This is the official repository of QuantGPT LLC.
+
+Not affiliated with other GitHub projects named QuantGPT. The product, its hosted MCP server and this repository are QuantGPT by QuantGPT LLC, at https://quantgpt.co.
 
 **The data and trading platform for AI: decades of US market data, backtests in seconds.**
 
-QuantGPT is the data and trading platform for AI. Claude and ChatGPT connect over MCP to decades of US market data, and backtests run in seconds on QuantGPT Cloud. On QuantGPT Pro, your own strategy runs there too and trades in your own brokerage account. Start with a 3-day free trial of QuantGPT or QuantGPT Pro, cancel any time.
+Claude and ChatGPT connect over MCP to decades of US market data, and backtests run in seconds on QuantGPT Cloud. On QuantGPT Pro, your own strategy runs there too and trades in your own brokerage account. Start with a 3-day free trial of QuantGPT or QuantGPT Pro, cancel any time.
 
 | | |
 |---|---|
@@ -13,6 +17,8 @@ QuantGPT is the data and trading platform for AI. Claude and ChatGPT connect ove
 | Plans | QuantGPT $49 a month, QuantGPT Pro $149 a month, each with a 3-day free trial |
 | Website | https://quantgpt.co |
 | Registry name | `co.quantgpt/mcp` |
+| Made by | QuantGPT LLC, Tampa, Florida |
+| Official accounts | https://x.com/quantgptco, https://www.reddit.com/r/QuantGPT, https://github.com/quantgptco |
 
 Updated October 2026. This repository holds no server code. It is the public listing for the hosted server: how to connect each client, what every tool does, example prompts, plans and limits.
 
@@ -20,10 +26,10 @@ Updated October 2026. This repository holds no server code. It is the public lis
 
 - **Backtest any idea in seconds.** Describe a strategy in plain words; your AI turns it into criteria (up to 8 filters, a rank, a holding count) and runs it walk-forward against a benchmark on decades of US market data, with a cost model and a decade-by-decade table. Up to 100 variants run in one call.
 - **Grade any US stock.** A+ to F on six dimensions against the whole market, point in time, with the drivers, the peers and a chart pack. Up to 25 tickers in one call, or the leaderboard for a sector.
-- **Query the data itself.** Prices, total returns, fundamentals joined by filing date, 55+ factors, FRED macro, insider filings and short interest, through ready-made calls or read-only SQL over the whole warehouse.
-- **Start from the literature.** 175 documented strategies from papers, books and practitioners, 63 of them runnable in one call.
+- **Query the data itself.** Prices, total returns, fundamentals joined by filing date, 74 backtest factors, FRED macro, insider filings and short interest, through ready-made calls or read-only SQL over the whole warehouse.
+- **Start from the literature.** 175 documented strategies from papers, books and practitioners, 53 of them runnable in one call.
 - **Work on a portfolio.** A frontier over your tickers, a review of your holdings, the trade list from your criteria to the book they imply today, paper books marked nightly, and alerts when a name enters or leaves a screen.
-- **Go past US stocks.** Commodity futures, macro regimes, weather studies, crypto with funding rates, prediction markets and memecoins.
+- **Go past US stocks.** Macro regimes, commodity spot series, weather studies, crypto with funding rates, memecoins and the 24/7 stock tape. Prediction markets are coming soon.
 - **Chart and cite.** Branded charts with the numbers that drew them, and `search` and `fetch` so ChatGPT deep research can cite the library, the studies and the forum.
 - **Run your own strategy on QuantGPT Pro.** QuantGPT Cloud hosts your strategy as your own code, on your schedule, and it trades in your own brokerage account under your keys. You set it up in the terminal; no MCP tool places an order.
 
@@ -134,13 +140,13 @@ No connector option on your plan? The setup prompt at https://terminal.quantgpt.
 
 ### Your first call
 
-Ask your AI to call `describe_capabilities`: it returns the whole map (every factor, operator, benchmark, library category and methodology rule). On connect the server lists 14 core tools and 5 discovery tools; the other 57 sit in seven categories. Your AI calls `available_categories`, then `activate_category`, to list a category for your key, or runs any tool by name through `call_tool`. With a key-based client you can add `?tools=all` to the URL to list every tool at once.
+Ask your AI to call `describe_capabilities`: it returns the whole map (every factor, operator, benchmark, library category and methodology rule). On connect the server lists 14 core tools (15 once `pre_trade_brief` opens) and 5 discovery tools; the other 57 sit in seven categories. If your AI asks where the market stands, `market_snapshot` answers in one call. Your AI calls `available_categories`, then `activate_category`, to list a category for your key, or runs any tool by name through `call_tool`. With a key-based client you can add `?tools=all` to the URL to list every tool at once.
 
 ## What your AI can call
 
-76 tools, 68 of them switched on today; the 8 marked (coming soon) answer with a coming-soon note until they open. None of them places, modifies or cancels an order at any broker. A few write to your own QuantGPT account: saved studies, paper books, sealed books, alerts, event rules and the panels on your terminal.
+77 tools, 69 of them switched on today; the 8 marked (coming soon) answer with a coming-soon note until they open. None of them places, modifies or cancels an order at any broker. A few write to your own QuantGPT account: saved studies, paper books, sealed books, alerts, event rules and the panels on your terminal.
 
-### Listed on connect (14)
+### Listed on connect (15)
 
 | Tool | What it does |
 |---|---|
@@ -148,14 +154,15 @@ Ask your AI to call `describe_capabilities`: it returns the whole map (every fac
 | `fetch` | Fetches one of those records in full by the id `search` returned. |
 | `describe_capabilities` | The full machine-readable map: factors, operators, benchmarks, timing rules, library categories, methodology. Call it first. |
 | `guide` | The onboarding curriculum (THE RAMP), taught one step at a time. |
-| `get_prompt_library` | 31 ready prompts, each mapped to the tools that answer it. |
+| `market_snapshot` | The state of the market in one read-only call: the major indexes against their 50 and 200-day averages, S&P 500 breadth, sectors, Treasury yields and credit spreads, VIX, Fed liquidity and crypto, each value with its source and as-of date. Never a forecast. |
+| `get_prompt_library` | 34 ready prompts, each mapped to the tools that answer it. |
 | `search_library` | Searches the 175 documented strategies by keyword; each result says whether it is runnable. |
 | `grade_stock` | Grades one ticker A+ to F on six dimensions against the whole universe, point in time, with a chart pack. |
 | `run_backtest` | Backtests any criteria (up to 8 filters, a rank, top N equal weight; monthly, weekly or daily formation) walk-forward against a benchmark, with a cost model and a decade table. |
 | `run_sweep` | Up to 100 criteria variants in one call, returned as a ranked comparison table. |
 | `challenge_finding` | The skeptic pass: eleven checks that try to break a finding, strongest objection first. |
 | `fetch_job` | Collects a long-running job (a backtest, regression or skeptic pass) by its job id. |
-| `pre_trade_brief` | (coming soon) A ticker's grade, whether it passes your criteria today, the criteria's finding with the skeptic pass, and what your past findings did next. Findings, not orders. |
+| `pre_trade_brief` | (coming soon, not listed until it opens) A ticker's grade, whether it passes your criteria today, the criteria's finding with the skeptic pass, and what your past findings did next. Findings, not orders. |
 | `query_warehouse` | Read-only SQL (DuckDB) over every research database: SELECT, WITH, DESCRIBE and SHOW only, 5,000-row cap, 45-second timeout. |
 | `list_warehouse` | The map of every database and table `query_warehouse` can read. |
 
@@ -182,7 +189,7 @@ Ask your AI to call `describe_capabilities`: it returns the whole map (every fac
 | `run_market_timing` | Classic index timing rules: 10-month moving average, golden cross, sell in May, Santa rally. |
 | `run_breadth_study` | Decades of computed NYSE breadth: Hindenburg omens under both published specs, clusters, forward returns against a baseline. |
 | `run_factor_regression` | Regresses a criteria set's monthly returns on the house factors: loadings, t-stats and alpha. |
-| `list_factors` | The factor vocabulary for filters and ranking. |
+| `list_factors` | The factor vocabulary for filters and ranking: 74 factors the backtester can use, and more where the store carries the extra tables. |
 | `mint_factor` | Writes a factor as an expression in qlib's Alpha158 grammar, then ranks or filters by it; look-ahead is refused. |
 | `list_minted_factors` | The factors minted in this server session, with their expressions and proof stats. |
 | `make_chart_pack` | A branded chart pack (finding card, growth, drawdowns, yearly bars) from a return series you computed, or one chart for a whole parameter sweep. |
@@ -212,9 +219,9 @@ Ask your AI to call `describe_capabilities`: it returns the whole map (every fac
 
 | Tool | What it does |
 |---|---|
-| `get_macro_series` | 42 FRED series (rates, curve spreads, CPI, unemployment, VIX and more). Latest vintage; revisions not modelled. |
+| `get_macro_series` | 42 curated FRED series (rates, curve spreads, CPI, unemployment, VIX and more). Latest vintage; revisions not modelled. |
 | `run_macro_regime` | Holds an index or a commodity while a FRED series meets a condition, else T-bills. |
-| `run_commodity_backtest` | Momentum across 26 continuous futures since about 2001. Roll costs not modelled. |
+| `run_commodity_backtest` | Paused: it answers that the futures are moving to a licensed source. The commodity spot series (WTI, Brent, Henry Hub natural gas) stay available in `run_macro_regime` and `run_weather_study`. |
 | `run_weather_study` | Degree-day or precipitation anomalies at a US weather station against a commodity's next-month return. A study, not a strategy. |
 
 ### Alternative markets: category `alt_markets` (13)
@@ -263,26 +270,26 @@ Ask your AI to call `describe_capabilities`: it returns the whole map (every fac
 
 ## Strategies you can ask about
 
-A sample from the library of 175 documented strategies (63 of them runnable), drawn from papers, books and practitioners. They are listed so you can test them, not as promises. A library run is the closest the warehouse's factor vocabulary gets to the published rule, and every run says what it approximates. Run one and read its losing years before you trust it.
+A sample from the library of 175 documented strategies (53 of them runnable), drawn from papers, books and practitioners. They are listed so you can test them, not as promises. A library run is the closest the warehouse's factor vocabulary gets to the published rule, and every run says what it approximates and how it differs from the source. A name that starts "Inspired by" marks a run that only loosely follows its source. Run one and read its losing years before you trust it.
 
 | Strategy | Source | Library id | Runnable |
 |---|---|---|---|
-| Cross-Sectional Momentum (Jegadeesh-Titman) | Jegadeesh and Titman (1993), Journal of Finance | `jegadeesh-titman-1993` | yes |
+| Inspired by Jegadeesh and Titman: Cross-Sectional Momentum | Jegadeesh and Titman (1993), Journal of Finance | `jegadeesh-titman-1993` | yes |
 | Momentum Crashes | Daniel and Moskowitz (2016), Journal of Financial Economics | `daniel-moskowitz-2016` | documented only |
-| Magic Formula | Joel Greenblatt (2005) | `greenblatt-magic-2005` | yes |
+| Inspired by Greenblatt: Magic Formula | Joel Greenblatt (2005) | `greenblatt-magic-2005` | yes |
 | Piotroski F-Score | Piotroski (2000), Journal of Accounting Research | `piotroski-2000` | yes |
 | Gross Profitability | Novy-Marx (2013), Journal of Financial Economics | `novy-marx-2013` | yes |
-| Quality Minus Junk (QMJ) | Asness, Frazzini and Pedersen (2019), Review of Accounting Studies | `qmj-2019` | yes |
-| Betting Against Beta (BAB) | Frazzini and Pedersen (2014), Journal of Financial Economics | `bab-2014` | yes |
+| Inspired by Asness, Frazzini and Pedersen: Quality Minus Junk | Asness, Frazzini and Pedersen (2019), Review of Accounting Studies | `qmj-2019` | yes |
+| Betting Against Beta (BAB) | Frazzini and Pedersen (2014), Journal of Financial Economics | `bab-2014` | documented only (levered and long-short; runs here are long only without leverage) |
 | Accruals Anomaly | Sloan (1996), The Accounting Review | `sloan-1996` | yes |
-| Post-Earnings Announcement Drift (SUE) | Bernard and Thomas (1989, 1990) | `bernard-thomas-1989` | yes |
+| Inspired by Bernard and Thomas: Post-Earnings Drift (SUE) | Bernard and Thomas (1989, 1990) | `bernard-thomas-1989` | yes |
 | 10-Month MA Timing (GTAA) | Meb Faber (2007) | `faber-gtaa-2007` | yes |
 | Sell in May (Halloween Indicator) | Bouman and Jacobsen (2002), American Economic Review | `halloween-2002` | yes |
-| CANSLIM | William O'Neil (1988) | `oneil-canslim-1988` | yes |
+| Inspired by O'Neil: CANSLIM | William O'Neil (1988) | `oneil-canslim-1988` | yes |
 | Pre-FOMC Announcement Drift | Lucca and Moench (2015), Journal of Finance | `lucca-moench-2015` | documented only |
-| Prediction Market Longshots | Favorite-longshot bias (Griffith 1949; Snowberg and Wolfers 2010), on resolved Polymarket markets | `pm-longshot-bias` | yes |
+| Prediction Market Longshots (Polymarket only) | Favorite-longshot bias (Griffith 1949; Snowberg and Wolfers 2010), on resolved Polymarket markets | `pm-longshot-bias` | yes |
 
-Ask: "Run the library strategy `piotroski-2000`, show me its losing years and its worst drawdown, and tell me what the run approximates from the paper." More prompts: [examples/prompts.md](examples/prompts.md) and [examples/first-session.md](examples/first-session.md). Browse the whole library at https://quantgpt.co/library/.
+Ask: "Run the library strategy `piotroski-2000`, show me its losing years and its worst drawdown, and tell me what the run approximates from the paper." More prompts: [examples/prompts.md](examples/prompts.md), [examples/first-session.md](examples/first-session.md) and the Strategy Library walk-throughs in [examples/library/](examples/library/). Browse the whole library at https://quantgpt.co/library/.
 
 ## Plans and limits
 
@@ -294,17 +301,18 @@ Ask: "Run the library strategy `piotroski-2000`, show me its losing years and it
 
 - QuantGPT and QuantGPT Pro start with a 3-day free trial: card up front, cancel any time. The trial has the plan's full daily limits.
 - An AI call is one tool call. Connecting, listing tools and pings do not count. The count is per account, across all of its keys.
-- A per-minute limit per account also applies. Past it the server answers `429`; try again a minute later.
-- Some tools depend on the plan: `portfolio_review` opens on QuantGPT Pro, `count_bets` on QuantGPT and QuantGPT Pro, and `strategy_alerts` allows 3 alerts on QuantGPT and unlimited alerts on QuantGPT Pro.
+- The daily count resets at 00:00 UTC.
+- A per-minute limit also applies: 120 requests a minute per account. Past it the server answers `429`; try again a minute later.
+- Some tools depend on the plan: `portfolio_review` opens on QuantGPT Pro, `count_bets` on QuantGPT and QuantGPT Pro, `strategy_alerts` allows 3 alerts on QuantGPT and unlimited alerts on QuantGPT Pro, and `paper_books` allows 1 book on QuantGPT and 5 on QuantGPT Pro.
 - Teams: Business is custom (seats, limits built for your volume) and starts with a conversation at https://quantgpt.co/contact.
 
 Plans: https://quantgpt.co/#plans. Start: https://terminal.quantgpt.co/join.
 
 ## What the data is, and is not
 
-- Companies that later delisted are priced from 1998 and are in the market-wide backtest universe from then on; earlier years hold survivors only. A backtest on a list of tickers you choose, and a rule on a single index, are not affected. The server tells your AI to say so whenever it reports a market-wide result.
+- Companies that later delisted are only partly in the market-wide backtest universe from 1998: some have no prices or no factor data, and each market-wide result states the share it measured. Before 1998 the universe holds survivors only, so a market-wide result leans toward survivors. Criteria backtests start in 1998 unless you choose an earlier year. A backtest on a list of tickers you choose, and a rule on a single index, are not affected. The server tells your AI to say so whenever it reports a market-wide result.
 - Fundamentals are joined by filing date. About 9% of rows still carry the quarter-end as the filing date, so those quarters are seen early; a fix is in progress.
-- Factor data begins in 1990. Macro series are the latest vintage; revisions are not modelled.
+- Factor data begins in 1990, the earliest start year a criteria backtest accepts. Macro series are the latest vintage; revisions are not modelled.
 - Results are gross by default. Every `run_backtest` result also carries turnover and net figures at 5, 10, 25 and 50 bps per side.
 - Every `run_backtest` result returns its worst drawdown, a decade-by-decade table and the full return series, so the losing years are in the result; its chart pack draws them year by year.
 - The same criteria return the same numbers, to the last digit.
